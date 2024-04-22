@@ -38,18 +38,19 @@ html {
     --red-dark: #842029;
     --green-light: #d1e7dd;
     --green-dark: #0f5132;
-     /* fonts  */
-     --small-text: 0.875rem;
-     --extr-small-text: 0.7em
-      /* rest of the vars */
-    --backgroundColor: var(--grey-50);
-    --textColor: var(--grey-900);
-    --borderRadius: 0.25rem;
-    --letterSpacing: 1px;
-    --transition: 0.2s ease-in-out all;
-    --max-width: 1120px;  
-    --fixed-width: 600px;
-    
+
+      /* fonts  */
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+  /* rest of the vars */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+
     /*box shadow*/
     --shadow-1: 0 1px 1px rgba(0, 0, 0, 0.1), 0, 1px, 2px, 0 rgba(0, 0, 0, 0.06);
     --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -124,7 +125,7 @@ body {
       }
 
       /* buttons */
-      .btn  {
+      .btn {
         cursor: pointer;
         color: var(--white);
         background: var(--primary-500);
@@ -164,15 +165,16 @@ body {
         /* title */
          .title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
          }
 
          .title-underline {
             background: var(--primary-500);
             width: 7rem;
-            height: 0.25rem;
+            height: 0.09rem;
             margin: 0 auto;
             margin-top: -1rem;
+            margin-bottom: 4rem;
          }
 
          /*
@@ -193,7 +195,8 @@ Wikipedia
 }
 
 .container img {
-    width: 200px;   
+    width: 160px;  
+    margin-top: -4rem; 
 }
 
 .container h3 {
@@ -212,7 +215,77 @@ Wikipedia
 
 .form-input, 
 .submit-btn {
-    padding: 0.375rem 0.75rem;
+    padding: 0.45rem 0.75rem;
     background: var(--backgroundColor);
-    border: 1px solid var(--grey-200);
+    border: 1px solid var(--grey-300);
+}
+
+.form-input {
+    border-right: transparent;
+    border-top-left-radius: var(--borderRadius);
+    border-bottom-left-radius: var(--borderRadius);
+}
+
+.submit-btn {
+    border: 1px solid var(--primary-500);
+    border-left:transparent ;
+    border-top-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    text-transform: capitalize;
+    background: var(--primary-500);
+    color: var(--white);
+    transition: var(--transition);
+    cursor: pointer;
+}
+.submit-btn:hover {
+    color: var(--primary-900);
+}
+
+.results {
+    padding: 2rem 0;
+}
+
+.error {
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--red-dark);
+}
+.articles {
+    display: grid;
+    gap: 1rem;
+}
+
+.articles a {
+    display: block;
+    background: var(--white);
+    color: var(--textColor);
+    padding: 1.5rem 2rem;
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+}
+
+.articles p {
+    color: var(--grey-500);
+    transition: var(--transition);
+}
+
+.articles a:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+    .articles {
+        grid-template-columns: 1fr 1fr;
+    }
+    .form {
+
+        max-width: 600px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .articles {
+        grid-template-columns: 1fr 1fr 1fr;
+    }   
 }
